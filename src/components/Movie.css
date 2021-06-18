@@ -1,10 +1,38 @@
 .movie-container{
+    width: 60%;
     display: grid;
-    grid-template-columns: repeat(5,20%);
+    grid-template-columns: repeat(3,1fr);
     gap:1em;
-    margin-top: 2em;
+    margin: 2em auto;
 }
 .film{
     background-color:darkolivegreen;
     border-radius: 10px 16px 10px 16px;
 }
+
+.Search {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    height: 1.5em;
+   
+  }
+  .SearchSpan {
+    width: 25%;
+    border: 1px solid firebrick;
+    background: firebrick;
+    padding-top: 4px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    font-size: 20px;
+  }
+  .SearchInput {
+    width: 90%;
+    border: 3px solid firebrick;;
+    border-left: none;
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+  }

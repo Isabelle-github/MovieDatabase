@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import data from '../data/data';
 import './Movie.css'
 import Sort from './Sort';
+import Form from './Form';
 
 
 class Movie extends Component {
@@ -44,6 +45,32 @@ class Movie extends Component {
             myArr: tempArr, isSorted: !this.state.isSorted
         })
     }
+    addNew = () => {
+        let newMovieInput = {};
+        newMovieInput.year = "";
+        newMovieInput.title = "";
+        newMovieInput.genre = [];
+        this.setState({ myArr: [...this.state.myArr, newMovieInput] });
+    }
+    handleSearch = (e) => {
+        console.log(e.target.value)
+        if (e.key === "Enter") {
+        }
+        // https://learningtofly.dev/blog/how-to-search-an-array-of-objects-in-javascript-react
+        // const tempArray = () => {
+        //     const searchTerm = e.target.value.toLowerCase()
+        //     return this.state.myArr.filter(value => {
+        //         return value.title.toLowerCase().match(new RegExp(searchTerm, 'g')) ||
+        //             value.year.toLowerCase().match(new RegExp(searchTerm, 'g')) ||
+        //             value.director.toLowerCase().match(new RegExp(searchTerm, 'g')) ||
+        //             value.genre.toLowerCase().match(new RegExp(searchTerm, 'g')) ||
+        //             value.rate.toLowerCase().match(new RegExp(searchTerm, 'g')) ||
+        //             value.duration.toLowerCase().match(new RegExp(searchTerm, 'g'))
+        //     })
+        // }
+        // console.log(tempArray);
+        // this.setState({ myArr: tempArray })
+    }
 
     render() {
         console.log(data)
@@ -51,6 +78,22 @@ class Movie extends Component {
             <>
                 <div>
                     <Sort sortZ_A={this.handleSortZ_A} sortA_Z={this.handleSortA_Z} sortRate={this.handleSortRate} sortDescend={this.handleSortDescend} sortAscend={this.handleSortAscend}></Sort>
+
+                </div>
+                <div className="search_Form_Container">
+                    <div className="Search">
+                        <span className="SearchSpan">
+                            Search
+                        </span>
+                        <input
+                            className="SearchInput"
+                            type="text"
+                            placeholder={"Search Movie"}
+                            onChange={(e) => this.handleSearch(e)}
+                        />
+                    </div>
+                    {/* addMovie={this.addNew} */}
+                    <Form addMovie={this.addNew}></Form>
                 </div>
 
                 <section className="movie-container">

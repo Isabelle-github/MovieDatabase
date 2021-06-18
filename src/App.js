@@ -1,6 +1,6 @@
 import Movie from './components/Movie';
 import './App.css';
-import Sort from "./components/Sort";
+
 
 function App() {
   return (

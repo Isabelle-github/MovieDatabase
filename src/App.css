@@ -13,6 +13,30 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.search_Form_Container{
+  width: 50%;
+  display: flex;
+  /* border-style: solid; */
+  align-items: center;
+}
+form{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border-style: solid; */
+  
+}
+form input{
+  width: 20em;
+  height: 2em;
+  margin: 0.5em;
+}
+select{
+  width: 45%;
+  height:2.5em;
+margin: 1em auto;
+}
 
 
 
