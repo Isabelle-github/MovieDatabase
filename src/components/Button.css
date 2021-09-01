@@ -7,6 +7,13 @@ button{
     box-shadow: 2px 2px 2px darkolivegreen;;
     display: inline-block;
 }
+.active {
+    border-color: floralwhite;  
+}
+  
+  .inactive {
+    background-color: darkolivegreen;
+}
 .form_submit{
     margin: 1em auto;
 }

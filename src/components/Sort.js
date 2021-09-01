@@ -9,7 +9,7 @@ class Sort extends Component {
         console.log(this.props)
         return (
             <>
-                <button onClick={this.props.sortAscend}>
+                <button onClick={this.props.sortAscend} >
                     Sort by Year Ascending
                 </button>
                 <button onClick={this.props.sortDescend}>

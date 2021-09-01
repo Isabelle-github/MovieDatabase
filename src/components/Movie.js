@@ -8,7 +8,8 @@ import Form from './Form';
 class Movie extends Component {
     state = {
         myArr: [...data],
-        isSorted: false
+        isSorted: false,
+        statusButton: "inactive"
     }
     handleSortAscend = () => {
         let tempArr = [...this.state.myArr]
@@ -71,13 +72,16 @@ class Movie extends Component {
         // console.log(tempArray);
         // this.setState({ myArr: tempArray })
     }
+    handleStatus = () => {
+        this.setState({ statusButton: 'inactive' ? 'active' : 'active' })
+    }
 
     render() {
         console.log(data)
         return (
             <>
                 <div>
-                    <Sort sortZ_A={this.handleSortZ_A} sortA_Z={this.handleSortA_Z} sortRate={this.handleSortRate} sortDescend={this.handleSortDescend} sortAscend={this.handleSortAscend}></Sort>
+                    <Sort statuses={this.handleStatus} sortA_Z={this.handleSortA_Z} sortRate={this.handleSortRate} sortDescend={this.handleSortDescend} sortAscend={this.handleSortAscend}></Sort>
 
                 </div>
                 <div className="search_Form_Container">
